@@ -1,0 +1,239 @@
+C51 COMPILER V9.01   SNAKE                                                                 07/31/2020 21:36:51 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SNAKE
+OBJECT MODULE PLACED IN snake.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE snake.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*********************************************************************
+   2                                  贪吃蛇源码snake.c
+   3          **********************************************************************/
+   4          #include "config.h"
+   5          
+   6          /******与蛇相关的结构体定义*************/
+   7          static struct Food
+   8          {
+   9                  unsigned char x;        // 食物的横坐标
+  10                  unsigned char y;        // 食物的纵坐标
+  11          //      unsigned char yes;
+  12          }food;  // 食物结构体
+  13          
+  14          struct Snake
+  15          {
+  16                  char x[SNAKE_Max_Long];
+  17                  char y[SNAKE_Max_Long];
+  18                  unsigned char Long;             // 蛇的长度
+  19                  unsigned char Life;             // 蛇的生命
+  20          //      unsigned char Score;    // 蛇的分数，本例中没使用
+  21                  unsigned char Level;    // 蛇的等级
+  22                  unsigned char Dir;              // 蛇移动方向
+  23          }snake; // 蛇结构体
+  24          /****************************************/
+  25          
+  26          enum Dir{up, down, left, right}; //方向枚举
+  27          
+  28          
+  29          /***********变量声明***************/
+  30          unsigned char DispRAM[8]={0}; // 蛇坐标缓存
+  31          unsigned char tCount,n;
+  32          unsigned char keyValue=right;
+  33          unsigned char speedLevel=25;
+  34          extern uchar keyVal; // 来源于key.c
+  35          
+  36          unsigned char code music_tab[] ={   
+  37          0x20, 0x18, 0x1C, 0x30, 0x10, 0x40, 0x80, 0x2B //格式为: 操作1，操作2，操作3，操作4，吃豆，撞墙，撞身，   
+             - 
+  38          } ;
+  39          /**********************************/
+  40          
+  41          void delay (unsigned char m)   //控制频率延时    
+  42          {   
+  43   1       unsigned i=3*m;   
+  44   1       while(--i);   
+  45   1      }  
+  46          
+  47          // 用此函数来产生食物最好使蛇的长度不要那么长，蛇越长，点越难找，递归越深
+  48          static void createFood()
+  49          {
+  50   1              unsigned char i;
+  51   1              food.x = rand()%WIDTH;
+  52   1              food.y = rand()%LENGTH;
+  53   1              for(i=0; i<snake.Long; i++)
+  54   1              {
+C51 COMPILER V9.01   SNAKE                                                                 07/31/2020 21:36:51 PAGE 2   
+
+  55   2                      if(food.x==snake.x[i] && food.y==snake.y[i])
+  56   2                      createFood();   
+  57   2              }
+  58   1      }
+  59          
+  60          /****************初始化蛇的位置等***********************/
+  61          static void initSnake()
+  62          {
+  63   1              /********清除内存数据**********/
+  64   1              unsigned char i;
+  65   1              for(i=0; i<SNAKE_Max_Long; i++)
+  66   1              {
+  67   2                      snake.x[i]=-1;
+  68   2                      snake.y[i]=-1;
+  69   2              }
+  70   1              
+  71   1              /********初始化蛇参数**********/
+  72   1              snake.Long=2;   // 初始化蛇的长度为两节
+  73   1              snake.Life=1;   //初始化蛇活着
+  74   1              snake.Dir=right;
+  75   1              snake.x[1]=0;
+  76   1              snake.y[1]=2;
+  77   1              snake.x[0]=1;
+  78   1              snake.y[0]=2;
+  79   1              createFood();
+  80   1      }
+  81          
+  82          /********************刷新界面*******************/
+  83          static void drawSnake()
+  84          {
+  85   1              unsigned char i=0;
+  86   1              for(i=0; i<8; i++) DispRAM[i]=0;
+  87   1              for(i=0; i<snake.Long; i++)
+  88   1                      DispRAM[snake.y[i]] |= 1<<snake.x[i];
+  89   1              scanDisplay(DispRAM);
+  90   1              drawPoint(food.x, food.y);
+  91   1      }
+  92          
+  93          /********************蛇运动坐标刷新*******************/
+  94          static void runSnake()
+  95          {
+  96   1      
+  97   1              unsigned char i;
+  98   1              
+  99   1              // 蛇身体坐标移动，蛇头方向坐标逐渐向蛇尾方向移动
+ 100   1              for(i=snake.Long; i>0; i--)
+ 101   1              {       
+ 102   2                      snake.y[i]=snake.y[i-1];
+ 103   2                      snake.x[i]=snake.x[i-1];
+ 104   2              }
+ 105   1              
+ 106   1              // 重新获得蛇的头部位置
+ 107   1              switch(snake.Dir)
+ 108   1              {       
+ 109   2                      case up:        snake.y[0]-=1; break;
+ 110   2                      case down:      snake.y[0]+=1; break;
+ 111   2                      case left:      snake.x[0]-=1; break;
+ 112   2                      case right: snake.x[0]+=1; break;
+ 113   2                      default: break;
+ 114   2              }
+ 115   1              
+ 116   1              // 蛇吃到食物
+C51 COMPILER V9.01   SNAKE                                                                 07/31/2020 21:36:51 PAGE 3   
+
+ 117   1              if(snake.x[0]==food.x && snake.y[0]==food.y)
+ 118   1              {       
+ 119   2                      
+ 120   2                      n=200;
+ 121   2                      while(n--)    Beep=~Beep,delay(music_tab[4]); 
+ 122   2      
+ 123   2      
+ 124   2                      snake.Long++;
+ 125   2                      createFood();
+ 126   2              }
+ 127   1              
+ 128   1      
+ 129   1      }
+ 130          
+ 131          /*******************方向按键处理***********************/
+ 132          static void changeDir(unsigned char key)
+ 133          {
+ 134   1              // 方向按键的规则
+ 135   1              switch(key)
+ 136   1              {
+ 137   2                      case up:        if(snake.Dir != down)   snake.Dir=up;           break;
+ 138   2                      case down:      if(snake.Dir != up)             snake.Dir=down;         break;
+ 139   2                      case left:      if(snake.Dir != right)  snake.Dir=left;         break;
+ 140   2                      case right: if(snake.Dir != left)       snake.Dir=right;        break;
+ 141   2                      default: break;
+ 142   2              }
+ 143   1      }
+ 144          
+ 145          /********************启动贪吃蛇游戏（主函数）*********************/
+ 146          void startSnake()
+ 147          {
+ 148   1              
+ 149   1              uchar i=0;
+ 150   1              initSnake();
+ 151   1              n=200;
+ 152   1              while(n--)    Beep=~Beep,delay(music_tab[5]); 
+ 153   1              while(snake.Life)
+ 154   1              {
+ 155   2                      changeDir(keyValue);
+ 156   2                      
+ 157   2                      // 蛇运行的速度，由speedLevel决定
+ 158   2                      if(tCount >= speedLevel)
+ 159   2                      {
+ 160   3                              tCount=0;
+ 161   3                              runSnake();
+ 162   3                      }
+ 163   2                              
+ 164   2                      /**********************蛇之dead***************************/
+ 165   2                      // 限定蛇活动范围，超范围就dead
+ 166   2                      if((snake.x[0]>(WIDTH-1)) || (snake.x[0]<0) || (snake.y[0]>(LENGTH-1)) || (snake.y[0]<0))
+ 167   2                      {
+ 168   3                              
+ 169   3                              snake.Life=0;   
+ 170   3                              snake.Level=1;
+ 171   3                              speedLevel=25;
+ 172   3                              keyVal=right;   
+ 173   3                      }
+ 174   2                      // 蛇自杀检测
+ 175   2                      for(i=4; i<=snake.Long; i++)
+ 176   2                      {
+ 177   3                              
+ 178   3                              if(snake.x[i-1]==snake.x[0] && snake.y[i-1]==snake.y[0])
+C51 COMPILER V9.01   SNAKE                                                                 07/31/2020 21:36:51 PAGE 4   
+
+ 179   3                              {       
+ 180   4                                      n=200;
+ 181   4                                      while(n--)    Beep=~Beep,delay(music_tab[6]); 
+ 182   4                                      snake.Life=0;
+ 183   4                                      snake.Level=1;
+ 184   4                                      speedLevel=25;
+ 185   4                                      keyVal=right;   
+ 186   4                              }
+ 187   3                      }
+ 188   2                      /***********************************************************/
+ 189   2                      
+ 190   2                      // 等级越高速度越快
+ 191   2                      if(snake.Long >= SNAKE_Max_Long)
+ 192   2                      {
+ 193   3                              delayMs(500); // 延一下时
+ 194   3                              initSnake();
+ 195   3                              speedLevel-=5;
+ 196   3                              keyVal=right;                   
+ 197   3                              if(++snake.Level > 5)
+ 198   3                              {
+ 199   4                                      // 大神，你已经打爆机了，现在从头再来。。。
+ 200   4                                      n=200;
+ 201   4                                      while(n--)    Beep=~Beep,delay(music_tab[7]);
+ 202   4                                      snake.Level=1;
+ 203   4                                      speedLevel=25;                                          
+ 204   4                              }
+ 205   3                              tCount=0;
+ 206   3                      }
+ 207   2                      drawSnake();
+ 208   2              }
+ 209   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    587    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     48       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

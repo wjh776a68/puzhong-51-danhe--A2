@@ -1,0 +1,54 @@
+C51 COMPILER V9.01   DELAY                                                                 07/31/2020 21:23:29 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DELAY
+OBJECT MODULE PLACED IN delay.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE delay.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "config.h"
+   2          /**************************************************************************
+   3          ******  下面所有延时函数均从软件STC-ISP中获得，以12MHz晶振为时钟源
+   4          ******  STC-ISP软件下载地址：WWW.STCMCU.COM
+   5          **************************************************************************/
+   6          
+   7          //void delayUs(unsigned int i)
+   8          //{
+   9          //      while(i--)
+  10          //              _nop_();
+  11          //}
+  12          
+  13          void delay1Ms()         //@12.000MHz
+  14          {
+  15   1              unsigned char i, j;
+  16   1      
+  17   1              i = 2;
+  18   1              j = 239;
+  19   1              do
+  20   1              {
+  21   2                      while (--j);
+  22   2              } while (--i);
+  23   1      }
+  24          
+  25          void delayMs(unsigned int i)
+  26          {
+  27   1              while(i--)
+  28   1              {
+  29   2                      delay1Ms();
+  30   2              }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     29    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

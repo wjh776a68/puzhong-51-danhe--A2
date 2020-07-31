@@ -1,0 +1,163 @@
+C51 COMPILER V9.01   KEY                                                                   07/31/2020 21:39:38 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN key.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE key.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "config.h"
+   2          
+   3          extern enum Dir{up, down, left, right};
+   4          
+   5          //*********Key PIN**********//
+   6          /*sbit keyUp            = P3^1;
+   7          sbit keyDown    = P3^0;
+   8          sbit keyLeft    = P3^2;
+   9          sbit keyRight   = P3^3; */
+  10          //**************************//
+  11          
+  12          uchar keyVal=right;
+  13          
+  14           /*
+  15          uchar scanKey(void)
+  16          {
+  17                  
+  18                  if(!keyUp)              keyVal=up;
+  19                  if(!keyDown)    keyVal=down;
+  20                  if(!keyLeft)    keyVal=left;
+  21                  if(!keyRight)   keyVal=right;
+  22                  return keyVal;
+  23          }
+  24           */      
+  25          
+  26          #define GPIO_KEY P1
+  27          
+  28          sbit keyUp              = P3^1;
+  29          sbit keyDown    = P3^0;
+  30          sbit keyLeft    = P3^2;
+  31          sbit keyRight   = P3^3;
+  32          
+  33          void Delay10ms();   
+  34          void KeyDown();          
+  35          
+  36          unsigned char theKeyValue;
+  37          //
+  38          unsigned char KeyState;
+  39          
+  40          extern unsigned char n;  
+  41          extern void delay (unsigned char m);   //¿ØÖÆÆµÂÊÑÓÊ±    
+  42          
+  43          
+  44          
+  45          
+  46              
+  47          extern unsigned char code music_tab[] ;  
+  48          
+  49          
+  50          uchar scanKey(void){
+  51   1              int sure=1;
+  52   1              
+  53   1      
+  54   1              
+  55   1              KeyDown();
+C51 COMPILER V9.01   KEY                                                                   07/31/2020 21:39:38 PAGE 2   
+
+  56   1              if(KeyState)
+  57   1              {
+  58   2                      KeyState=0;
+  59   2                      if(theKeyValue==1 || theKeyValue==2){//top
+  60   3                              keyVal=down;
+  61   3                      }
+  62   2                      else if(theKeyValue==4 || theKeyValue==8){ //left
+  63   3                              keyVal=right;
+  64   3                      }
+  65   2                      else if(theKeyValue==7 || theKeyValue==11){  //right
+  66   3                              keyVal=left;
+  67   3                      }
+  68   2                      else if(theKeyValue==13 || theKeyValue==14){ //down
+  69   3                              keyVal=up;
+  70   3                      } 
+  71   2                      else{
+  72   3                              sure=0;
+  73   3                      }
+  74   2                       
+  75   2                       if(sure){
+  76   3                                      n=200;
+  77   3                              while(n--)    Beep=~Beep,delay(music_tab[keyVal]);     
+  78   3                       }   
+  79   2                         
+  80   2      
+  81   2      
+  82   2              }
+  83   1              return keyVal;
+  84   1      }
+  85          
+  86          
+  87          
+  88          void KeyDown(void)
+  89          {
+  90   1              char a;
+  91   1              GPIO_KEY=0x0f;
+  92   1              if(GPIO_KEY!=0x0f)
+  93   1              {
+  94   2                      Delay10ms();
+  95   2                      if(GPIO_KEY!=0x0f)
+  96   2                      {
+  97   3                              KeyState=1;
+  98   3                              //
+  99   3                              GPIO_KEY=0X0F;
+ 100   3      //                      Delay10ms();
+ 101   3                              switch(GPIO_KEY)
+ 102   3                              {
+ 103   4                                      case(0X07):     theKeyValue=0;break;
+ 104   4                                      case(0X0b):     theKeyValue=1;break;
+ 105   4                                      case(0X0d): theKeyValue=2;break;
+ 106   4                                      case(0X0e):     theKeyValue=3;break;
+ 107   4      //                              default:        theKeyValue=17; 
+ 108   4                              }
+ 109   3                              //
+ 110   3                              GPIO_KEY=0XF0;
+ 111   3                              Delay10ms();
+ 112   3                              switch(GPIO_KEY)
+ 113   3                              {
+ 114   4                                      case(0X70):     theKeyValue=theKeyValue;break;
+ 115   4                                      case(0Xb0):     theKeyValue=theKeyValue+4;break;
+ 116   4                                      case(0Xd0): theKeyValue=theKeyValue+8;break;
+ 117   4                                      case(0Xe0):     theKeyValue=theKeyValue+12;break;
+C51 COMPILER V9.01   KEY                                                                   07/31/2020 21:39:38 PAGE 3   
+
+ 118   4      //                              default:        KeyValue=17;
+ 119   4                              }
+ 120   3                              while((a<50)&&(GPIO_KEY!=0xf0))  
+ 121   3                              {
+ 122   4                                      Delay10ms();
+ 123   4                                      a++;
+ 124   4                              }
+ 125   3                              a=0;
+ 126   3                      }
+ 127   2              }
+ 128   1      }
+ 129          
+ 130          void Delay10ms(void)   // 0us
+ 131          {
+ 132   1          unsigned char a,b,c;
+ 133   1          for(c=1;c>0;c--)
+ 134   1              for(b=38;b>0;b--)
+ 135   1                  for(a=130;a>0;a--);
+ 136   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    261    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

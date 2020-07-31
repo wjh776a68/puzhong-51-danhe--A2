@@ -1,0 +1,9 @@
+"STARTUP.obj",
+"8x8lattice.obj",
+"delay.obj",
+"interrupt.obj",
+"key.obj",
+"main.obj",
+"snake.obj" 
+TO "stm89c52game" 
+RAMSIZE(256) 

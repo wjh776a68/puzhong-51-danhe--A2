@@ -1,0 +1,731 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\wjh77\Downloads\keil ¿ª·¢Èí¼þ\stm89c52game\stm89c52game.uvproj
+Project File Date:  07/31/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 8x8lattice.c...
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+compiling snake.c...
+linking...
+Program Size: data=65.0 xdata=0 code=1183
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=65.0 xdata=0 code=1183
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+KEY.C(33): warning C206: 'KeyDown': missing function-prototype
+KEY.C(38): error C202: 'keyVal': undefined identifier
+KEY.C(41): error C202: 'keyVal': undefined identifier
+KEY.C(44): error C202: 'keyVal': undefined identifier
+KEY.C(47): error C202: 'keyVal': undefined identifier
+KEY.C(55): error C231: 'KeyDown': redefinition
+compiling main.c...
+compiling snake.c...
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(33): warning C206: 'KeyDown': missing function-prototype
+KEY.C(50): warning C173: missing return-expression
+KEY.C(55): error C231: 'KeyDown': redefinition
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(54): warning C173: missing return-expression
+KEY.C(54): warning C290: missing return value
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  KEYVALUE
+    MODULE:  snake.obj (SNAKE)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  KEYVALUE
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 038CH
+Program Size: data=68.0 xdata=0 code=1369
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(56): warning C291: not every exit path returns a value
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  KEYVALUE
+    MODULE:  snake.obj (SNAKE)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  KEYVALUE
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 0391H
+Program Size: data=68.0 xdata=0 code=1374
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  KEYVALUE
+    MODULE:  snake.obj (SNAKE)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  KEYVALUE
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 0391H
+Program Size: data=68.0 xdata=0 code=1374
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=68.0 xdata=0 code=1374
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=68.0 xdata=0 code=1374
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+MAIN.C(8): warning C206: 'musicmain': missing function-prototype
+compiling music.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAYMS
+    MODULE:  music.obj (MUSIC)
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    000BH
+    TO:      000DH
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  _DELAYMS
+    MODULE:  snake.obj (SNAKE)
+    ADDRESS: 020CH
+Program Size: data=69.0 xdata=0 code=1685
+Target not created
+Build target 'Target 1'
+compiling music.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAYMS
+    MODULE:  music.obj (MUSIC)
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    000BH
+    TO:      000DH
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  _DELAYMS
+    MODULE:  snake.obj (SNAKE)
+    ADDRESS: 020CH
+Program Size: data=69.0 xdata=0 code=1685
+Target not created
+Build target 'Target 1'
+compiling music.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+C:\KEIL\C51\INC\REG52.H(13): error C141: syntax error near 'sfr'
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+CONFIG.H(14): error C127: 'uchar': invalid storage class
+CONFIG.H(15): error C127: 'uint': invalid storage class
+DELAY.C(14): error C132: 'delay1Ms': not in formal parameter list
+DELAY.C(14): error C141: syntax error near '{'
+DELAY.C(15): error C136: 'i': 'void' on variable
+DELAY.C(15): error C132: 'i': not in formal parameter list
+DELAY.C(15): error C136: 'j': 'void' on variable
+DELAY.C(15): error C132: 'j': not in formal parameter list
+DELAY.C(17): error C244: 'i': can't initialize, bad type or class
+DELAY.C(17): error C132: 'i': not in formal parameter list
+DELAY.C(18): error C244: 'j': can't initialize, bad type or class
+DELAY.C(18): error C132: 'j': not in formal parameter list
+DELAY.C(19): error C141: syntax error near 'do'
+DELAY.C(21): error C141: syntax error near '--'
+DELAY.C(21): error C129: missing ';' before ')'
+compiling interrupt.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+CONFIG.H(14): error C127: 'uchar': invalid storage class
+CONFIG.H(15): error C127: 'uint': invalid storage class
+INTERRUPT.C(3): error C127: 'tCount': invalid storage class
+INTERRUPT.C(4): error C127: 'keyValue': invalid storage class
+INTERRUPT.C(8): error C132: 'initTimer0': not in formal parameter list
+INTERRUPT.C(8): error C141: syntax error near '{'
+INTERRUPT.C(9): error C136: 'TMOD': 'void' on variable
+INTERRUPT.C(9): error C132: 'TMOD': not in formal parameter list
+INTERRUPT.C(10): error C136: 'TL0': 'void' on variable
+INTERRUPT.C(10): error C244: 'TL0': can't initialize, bad type or class
+INTERRUPT.C(10): error C136: 'TL0': 'void' on variable
+INTERRUPT.C(10): error C132: 'TL0': not in formal parameter list
+INTERRUPT.C(11): error C244: 'TH0': can't initialize, bad type or class
+INTERRUPT.C(11): error C132: 'TH0': not in formal parameter list
+INTERRUPT.C(12): error C244: 'TR0': can't initialize, bad type or class
+INTERRUPT.C(12): error C132: 'TR0': not in formal parameter list
+INTERRUPT.C(13): error C244: 'ET0': can't initialize, bad type or class
+INTERRUPT.C(13): error C132: 'ET0': not in formal parameter list
+INTERRUPT.C(14): error C244: 'EA': can't initialize, bad type or class
+INTERRUPT.C(14): error C132: 'EA': not in formal parameter list
+INTERRUPT.C(15): error C141: syntax error near '}'
+INTERRUPT.C(27): error C202: 'keyValue': undefined identifier
+INTERRUPT.C(28): error C202: 'tCount': undefined identifier
+compiling key.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+CONFIG.H(14): error C127: 'uchar': invalid storage class
+CONFIG.H(15): error C127: 'uint': invalid storage class
+KEY.C(12): error C132: 'uchar': not in formal parameter list
+KEY.C(12): error C141: syntax error near 'keyVal'
+KEY.C(12): error C244: 'keyVal': can't initialize, bad type or class
+KEY.C(12): error C132: 'keyVal': not in formal parameter list
+KEY.C(28): error C141: syntax error near 'sbit'
+KEY.C(41): error C129: missing ';' before 'scanKey'
+compiling main.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+CONFIG.H(14): error C127: 'uchar': invalid storage class
+CONFIG.H(15): error C127: 'uint': invalid storage class
+MAIN.C(5): error C132: 'main': not in formal parameter list
+MAIN.C(5): error C141: syntax error near '{'
+MAIN.C(6): error C132: 'initTimer0': not in formal parameter list
+MAIN.C(7): error C141: syntax error near 'while'
+MAIN.C(7): error C141: syntax error near '1'
+MAIN.C(9): error C231: 'startSnake': redefinition
+MAIN.C(10): error C141: syntax error near '}'
+compiling snake.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+CONFIG.H(14): error C127: 'uchar': invalid storage class
+CONFIG.H(15): error C127: 'uint': invalid storage class
+SNAKE.C(12): error C127: 'food': invalid storage class
+SNAKE.C(23): error C132: 'snake': not in formal parameter list
+SNAKE.C(30): error C244: 'DispRAM': can't initialize, bad type or class
+SNAKE.C(30): error C132: 'DispRAM': not in formal parameter list
+SNAKE.C(31): error C132: 'tCount': not in formal parameter list
+SNAKE.C(32): error C244: 'keyValue': can't initialize, bad type or class
+SNAKE.C(32): error C132: 'keyValue': not in formal parameter list
+SNAKE.C(33): error C244: 'speedLevel': can't initialize, bad type or class
+SNAKE.C(33): error C132: 'speedLevel': not in formal parameter list
+SNAKE.C(34): error C127: 'uchar': invalid storage class
+SNAKE.C(34): error C141: syntax error near 'keyVal'
+SNAKE.C(34): error C127: 'keyVal': invalid storage class
+SNAKE.C(40): error C127: 'createFood': invalid storage class
+SNAKE.C(40): error C141: syntax error near '{'
+SNAKE.C(41): error C136: 'i': 'void' on variable
+SNAKE.C(41): error C127: 'i': invalid storage class
+SNAKE.C(42): error C132: 'food': not in formal parameter list
+SNAKE.C(42): error C141: syntax error near '.'
+SNAKE.C(42): error C244: 'x': can't initialize, bad type or class
+SNAKE.C(42): error C132: 'x': not in formal parameter list
+SNAKE.C(43): error C132: 'food': not in formal parameter list
+SNAKE.C(43): error C141: syntax error near '.'
+SNAKE.C(43): error C244: 'y': can't initialize, bad type or class
+SNAKE.C(43): error C132: 'y': not in formal parameter list
+SNAKE.C(44): error C141: syntax error near 'for'
+SNAKE.C(44): error C141: syntax error near '=', expected ')'
+SNAKE.C(44): error C129: missing ';' before '<'
+compiling music.c...
+MUSIC.H(8): error C132: 'musicmain': not in formal parameter list
+C:\KEIL\C51\INC\REG52.H(13): error C141: syntax error near 'sfr'
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+MAIN.C(8): warning C206: 'musicmain': missing function-prototype
+compiling snake.c...
+compiling music.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAYMS
+    MODULE:  music.obj (MUSIC)
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    000BH
+    TO:      000DH
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  _DELAYMS
+    MODULE:  snake.obj (SNAKE)
+    ADDRESS: 020CH
+Program Size: data=69.0 xdata=0 code=1685
+Target not created
+Build target 'Target 1'
+compiling music.c...
+MUSIC.C(96): warning C206: 'delayms': missing function-prototype
+MUSIC.C(96): error C267: 'delayms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling music.c...
+linking...
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    000BH
+    TO:      000DH
+Program Size: data=69.0 xdata=0 code=1685
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+compiling music.c...
+music.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    000BH
+    TO:      000DH
+Program Size: data=69.0 xdata=0 code=1685
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling interrupt.c...
+INTERRUPT.C(21): warning C206: 'int0': missing function-prototype
+compiling music.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1685
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling interrupt.c...
+compiling music.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1675
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(17): warning C206: 'musicmain': missing function-prototype
+compiling snake.c...
+SNAKE.C(99): warning C280: 'p': unreferenced local variable
+SNAKE.C(99): warning C280: 'm': unreferenced local variable
+SNAKE.C(276): error C141: syntax error near 'uchar'
+SNAKE.C(276): error C202: 'i': undefined identifier
+SNAKE.C(302): error C202: 'i': undefined identifier
+SNAKE.C(304): error C202: 'i': undefined identifier
+SNAKE.C(335): error C202: 'p': undefined identifier
+SNAKE.C(336): error C202: 'p': undefined identifier
+SNAKE.C(336): error C202: 'i': undefined identifier
+SNAKE.C(337): error C202: 'p': undefined identifier
+SNAKE.C(337): error C202: 'i': undefined identifier
+SNAKE.C(338): error C202: 'm': undefined identifier
+SNAKE.C(340): error C202: 'm': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling snake.c...
+SNAKE.C(99): warning C280: 'p': unreferenced local variable
+SNAKE.C(99): warning C280: 'm': unreferenced local variable
+SNAKE.C(276): error C141: syntax error near 'uchar'
+SNAKE.C(276): error C202: 'i': undefined identifier
+SNAKE.C(302): error C202: 'i': undefined identifier
+SNAKE.C(304): error C202: 'i': undefined identifier
+SNAKE.C(335): error C202: 'p': undefined identifier
+SNAKE.C(336): error C202: 'p': undefined identifier
+SNAKE.C(336): error C202: 'i': undefined identifier
+SNAKE.C(337): error C202: 'p': undefined identifier
+SNAKE.C(337): error C202: 'i': undefined identifier
+SNAKE.C(338): error C202: 'm': undefined identifier
+SNAKE.C(340): error C202: 'm': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling snake.c...
+SNAKE.C(99): warning C280: 'p': unreferenced local variable
+SNAKE.C(99): warning C280: 'm': unreferenced local variable
+SNAKE.C(337): error C202: 'p': undefined identifier
+SNAKE.C(338): error C202: 'p': undefined identifier
+SNAKE.C(339): error C202: 'p': undefined identifier
+SNAKE.C(340): error C202: 'm': undefined identifier
+SNAKE.C(342): error C202: 'm': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling snake.c...
+SNAKE.C(263): error C231: 'i': redefinition
+Target not created
+compiling snake.c...
+snake.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+SNAKE.C(262): warning C280: 'p': unreferenced local variable
+SNAKE.C(262): warning C280: 'm': unreferenced local variable
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  N
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _MUSICDELAYMS
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  music.obj (MUSIC)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SNAKE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MUSICDELAYMS?SNAKE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SNAKE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MUSICMAIN?MUSIC
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  N
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 0575H
+Program Size: data=73.0 xdata=0 code=1904
+Target not created
+Build target 'Target 1'
+compiling snake.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  N
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _MUSICDELAYMS
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  music.obj (MUSIC)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MUSICMAIN?MUSIC
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  N
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 05B9H
+Program Size: data=72.0 xdata=0 code=1972
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(55): error C141: syntax error near 'uchar'
+KEY.C(55): error C141: syntax error near '{'
+KEY.C(56): error C231: 'KeyDown': redefinition
+KEY.C(57): error C141: syntax error near 'if'
+KEY.C(58): error C129: missing ';' before '{'
+compiling main.c...
+compiling snake.c...
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(55): error C141: syntax error near 'uchar'
+KEY.C(55): error C141: syntax error near '{'
+KEY.C(56): error C231: 'KeyDown': redefinition
+KEY.C(57): error C141: syntax error near 'if'
+KEY.C(58): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  N
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  music.obj (MUSIC)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MUSICMAIN?MUSIC
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  N
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 04DDH
+Program Size: data=72.0 xdata=0 code=1757
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  music.obj (MUSIC)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  music.obj (MUSIC)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MUSICMAIN?MUSIC
+Program Size: data=71.0 xdata=0 code=1756
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+compiling snake.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  N
+    MODULE:  interrupt.obj (INTERRUPT)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  N
+    MODULE:  interrupt.obj (INTERRUPT)
+    ADDRESS: 03CFH
+Program Size: data=70.0 xdata=0 code=1460
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1460
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+KEY.C(86): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(86): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(55): warning C280: 'm': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?KEY
+Program Size: data=71.0 xdata=0 code=1430
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?KEY
+Program Size: data=70.0 xdata=0 code=1430
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?KEY
+Program Size: data=70.0 xdata=0 code=1430
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling interrupt.c...
+compiling key.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?KEY
+Program Size: data=69.0 xdata=0 code=1425
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+KEY.C(83): error C141: syntax error near 'int'
+KEY.C(83): error C202: 'n': undefined identifier
+KEY.C(85): error C202: 'n': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?KEY
+Program Size: data=71.0 xdata=0 code=1446
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1465
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1461
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1461
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1461
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+compiling snake.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  interrupt.obj (INTERRUPT)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  key.obj (KEY)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  main.obj (MAIN)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  snake.obj (SNAKE)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?INTERRUPT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SNAKE
+Program Size: data=70.0 xdata=0 code=1477
+Target not created
+Build target 'Target 1'
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+compiling snake.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1461
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+compiling main.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1465
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1463
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1463
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+compiling snake.c...
+SNAKE.C(117): error C202: 'music_tab': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling snake.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MUSIC_TAB
+    MODULE:  snake.obj (SNAKE)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  snake.obj (SNAKE)
+Program Size: data=70.0 xdata=0 code=1497
+Target not created
+Build target 'Target 1'
+compiling key.c...
+KEY.C(81): error C202: 'music_tab': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=70.0 xdata=0 code=1444
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+SNAKE.C(165): error C202: 'n': undefined identifier
+SNAKE.C(174): error C202: 'n': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling 8x8lattice.c...
+compiling delay.c...
+compiling interrupt.c...
+compiling key.c...
+compiling main.c...
+compiling snake.c...
+linking...
+Program Size: data=71.0 xdata=0 code=1478
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+compiling snake.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  snake.obj (SNAKE)
+Program Size: data=71.0 xdata=0 code=1533
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  snake.obj (SNAKE)
+Program Size: data=71.0 xdata=0 code=1533
+Target not created
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=71.0 xdata=0 code=1515
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1506
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1506
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1485
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1486
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1508
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling snake.c...
+SNAKE.C(150): error C141: syntax error near 'uchar'
+SNAKE.C(150): error C202: 'i': undefined identifier
+SNAKE.C(174): error C202: 'i': undefined identifier
+SNAKE.C(177): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling snake.c...
+linking...
+Program Size: data=69.0 xdata=0 code=1531
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling key.c...
+linking...
+Program Size: data=71.0 xdata=0 code=1550
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=71.0 xdata=0 code=1550
+creating hex file from "stm89c52game"...
+"stm89c52game" - 0 Error(s), 0 Warning(s).
